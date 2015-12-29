@@ -33,8 +33,7 @@ body {
 }
 
 
-//NAVBAR
-
+//NAVBAR MEDIA BIG
 
 @media (min-width: 768px) {
   .navbar .navbar-nav {
@@ -42,25 +41,40 @@ body {
       float: none;
       vertical-align: top;
   	.dropdown-toggle {
+  		color: rgba(230, 230, 230, 0.9);
 			font-size: 22px;
 			margin: 10px;
 			font-weight: 300;
 		}
   }
-
-  .container{
-  	margin:5%;
+  .navbar-brand{
+  	font-size: 25px;
+		margin: 10px;
+		font-weight: 300;
+		color: white;
   }
+
   .enroll{
   	margin:10px;
   }
   .navbar .navbar-collapse {
       text-align: center;
   }
+  li.dropdown:hover{
+  	background-color: rgba(230, 230, 230, 1);
+  	color: black;
+  }
 }
 
-////////////END OF MEDIA QUERY
+//NAVBAR MEDIA SMALL
 
+
+@media (max-width: 768px) {
+	.container{
+		margin:5px;
+	}
+
+}
 
 
 .dropdown-text{
