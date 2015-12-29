@@ -2,34 +2,68 @@
 <script src="//google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.0.14/src/markerclusterer_packed.js"></script>
 <script src='//google-maps-utility-library-v3.googlecode.com/svn/tags/infobox/1.1.9/src/infobox_packed.js' type='text/javascript'></script> <!-- only if you need custom infoboxes -->
 
-<h1>Locations</h1>
+
+
+<div class="main-map" style='width: 800px;'>
+
+
+
+
+	<h1>Locations</h1>
+
+  <!-- <div id="map" style='width: 800px; height: 400px; border:1px solid black'></div> -->
 
 <div style='width: 800px;'>
-  <div id="map" style='width: 800px; height: 400px; border:1px solid black'></div>
+<div id="sidebar_builder" style='width: 800px; height: 400px;'></div>
+</div>
+<div id='sidebar_container'>
+</div>
+
+
 </div>
 
 <script>
-handler = Gmaps.build('Google');
-handler.buildMap({ provider: { 
-	center:new google.maps.LatLng(51.508742,-0.120850),
-  zoom:10,
-  mapTypeId:google.maps.MapTypeId.ROADMAP,
-	 }, internal: {id: 'map'}}, function(){
+function createSidebarLi(json){
+  return ("<li><a>" + json.name + "</a></li>");
+};
 
-  markers = handler.addMarkers([
-    {
-      "lat": 51.528308,
-      "lng": -0.3817765,
-      "picture": {
-        "url": "http://people.mozilla.com/~faaborg/files/shiretoko/firefoxIcon/firefox-32.png",
-        "width":  32,
-        "height": 32
-      },
-      "infowindow": "hello!"
-    }
-  ]);
+function bindLiToMarker($li, marker){
+  $li.on('click', function(){
+    handler.getMap().setZoom(14);
+    marker.setMap(handler.getMap()); //because clusterer removes map property from marker
+    marker.panTo();
+    google.maps.event.trigger(marker.getServiceObject(), 'click');
+  })
+};
+
+function createSidebar(json_array){
+  _.each(json_array, function(json){
+    var $li = $( createSidebarLi(json) );
+    $li.appendTo('#sidebar_container');
+    bindLiToMarker($li, json.marker);
+  });
+};
+
+handler = Gmaps.build('Google');
+handler.buildMap({ internal: {id: 'sidebar_builder'}}, function(){
+  var json_array = [
+    { lat: 51.4901031, lng: -0.1882915, name: 'Bousefield', infowindow: "Bousefield" },
+    { lat: 51.4952747, lng: -0.1792019, name: 'Lycee Francais', infowindow: "Lycee Francais" },
+    { lat: 51.4862939, lng: -0.2119604, name: 'Fulham Prep', infowindow: "Fulham Prep" },
+    { lat: 51.4734531, lng: -0.2017752, name: 'Parsons Green', infowindow: "Wendy Bell" }
+  ];
+
+
+  var markers = handler.addMarkers(json_array);
+
+  _.each(json_array, function(json, index){
+    json.marker = markers[index];
+  });
+
+  createSidebar(json_array);
   handler.bounds.extendWith(markers);
   handler.fitMapToBounds();
 });
+    
 
 </script>

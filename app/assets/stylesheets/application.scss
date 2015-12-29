@@ -28,23 +28,27 @@
 // }
 
 @media (min-width: 768px) {
-    .navbar .navbar-nav {
-        display: inline-block;
-        float: none;
-        vertical-align: top;
-  	li {
-			font-size: 20px;
+  .navbar .navbar-nav {
+      display: inline-block;
+      float: none;
+      vertical-align: top;
+  	.dropdown-toggle {
+			font-size: 22px;
 			margin: 10px;
 			font-weight: 300;
-			}
-    }
+		}
+  }
+  .enroll{
+  	margin:10px;
+  }
+  .navbar .navbar-collapse {
+      text-align: center;
+  }
+}
 
-	  .enroll{
-	  	margin:10px;
-	  }
-    .navbar .navbar-collapse {
-        text-align: center;
-    }
+.dropdown-text{
+  font-weight: 100;
+  font-size: 18px;
 }
 
 .navbar{
@@ -54,5 +58,16 @@
 
 body {
 	background-color: rgba(211, 211, 211, 0.41);	
+}
+
+.container{
+	border: 1px solid lightgrey;
+	padding: 40px;
+	background-color: rgba(250, 250, 250, 0.9);
+	padding-bottom: 50px;
+}
+
+.main-map {
+	margin: 0 auto;
 }
 
