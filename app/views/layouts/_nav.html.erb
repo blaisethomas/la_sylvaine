@@ -1,14 +1,10 @@
 <script>
+  //nav hover dropdown
     $(function() {
         $(".dropdown").hover(
             function(){ $(this).addClass('open') },
             function(){ $(this).removeClass('open') }
         );
-        //  $(".dropdown").click(
-        //     function(){ $(this).addClass('open') },
-        //     function(){ $(this).removeClass('open') }
-        // );
-      
     });
 </script>
 
@@ -33,9 +29,9 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Ethos</a></li>
-            <li><a href="#">History</a></li>
+            <li><%= link_to 'Home', root_path %></li>
+            <li><%= link_to 'Ethos', ethos_path %></li>
+            <li><%= link_to 'History', history_path %></li>
             <li role="separator" class="divider"></li>
             <li><a href="#">La Sylvaine Staff</a></li>
             <li role="separator" class="divider"></li>
@@ -47,7 +43,7 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Logistics <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Locations </a></li>
+            <li><%= link_to 'Locations', locations_path %></li>
             <li><a href="#">Timetables</a></li>
             <li><a href="#">Calendar</a></li>
             <li><a href="#">Fees</a></li>
