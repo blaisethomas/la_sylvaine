@@ -17,7 +17,7 @@
   <% end %>
 
 <div class="row">
-	<div class="col-md-6">
+	<div class="col-sm-6">
 	  <div class="field form-group">
 	    <%= f.label :parent_first_name %><br>
 	    <%= f.text_field :parent_first_name, :class => "form-control", :placeholder => "(prénom)" %>
@@ -36,16 +36,16 @@
 	  </div>
 	  <div class="field form-group">
 	    <%= f.label :location %><br>
-	    <%= f.select :location, options_for_select([["select preferred location", ""], "", "I'm not sure", "South Kensington", "Bousfield", "Oratory", "Our Lady of Victories", "Parsons Green", "Chelsea Theatre", "Fulham Prep"]), :class => "form-control" %>
+	    <%= f.select :location, options_for_select([["(select preferred location)", ""], "", "No preference", "South Kensington", "Bousfield", "Oratory", "Our Lady of Victories", "Parsons Green", "Chelsea Theatre", "Fulham Prep"]), :class => "form-control" %>
 	  </div>
 	</div>
-	<div class="col-md-6">
+	<div class="col-sm-6">
 	  <div class="field form-group">
 	    <%= f.label :child_first_name %><br>
 	    <%= f.text_field :child_first_name, :class => "form-control" %>
 	  </div>
 	  <div class="field form-group">
-	    <%= f.label :child_dob %><br>
+	    <%= f.label "child date of birth" %><br>
 	    <%= f.text_field :child_dob, :class => "form-control" %>
 	  </div>
 	  <div class="field form-group">
@@ -53,7 +53,7 @@
 	    <%= f.text_field :school, :class => "form-control", :placeholder => "(where does your child go to school?)" %>
 	  </div>
 	  <div class="field form-group">
-	    <%= f.label :child_class %><br>
+	    <%= f.label "Class / Form" %><br>
 	    <%= f.text_field :child_class, :class => "form-control", :placeholder => "(what class/level/form are they currently in?)" %>
 	  </div>
 	  <div class="field form-group">
@@ -64,7 +64,8 @@
 	  <br>
 	  
 	</div>
-	<div class="actions">
+
+	<div class="actions col-sm-offset-5">
 	  <%= f.submit "Apply", :class => "btn btn-primary" %>
 	</div>
 
