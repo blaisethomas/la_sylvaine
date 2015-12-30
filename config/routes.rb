@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   #STATIC
   get 'history' => "welcome#history", as: :history
+  get 'confirmation' => "welcome#confirmation", as: :confirmation
   get 'ethos' => "welcome#ethos", as: :ethos
   get 'locations' => "welcome#locations", as: :locations
 

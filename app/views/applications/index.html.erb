@@ -1,3 +1,28 @@
-<h1>Applications#index</h1>
-<p>Find me in app/views/applications/index.html.erb</p>
-
+<table class="table table-striped">
+	<tr class="active">
+		<td><h4>Parent Full Name</h4></td>
+		<td><h4>Email</h4></td>
+		<td><h4>Telephone</h4></td>
+		<td><h4>Child Name</h4></td>
+		<td><h4>Date of Birth </h4></td>
+		<td><h4>Academic School</h4></td>
+		<td><h4>Class</h4></td>
+		<td><h4>Dance Level</h4></td>
+		<td><h4>Preferred location</h4></td>
+		<td><h4>Time/Date of application</h4></td>
+	</tr>
+	<% @applications.each do |app| %>
+	<tr>
+		<td><%= app.parent_first_name %> <%= app.parent_last_name %> </td>
+		<td><%= app.email %></td>
+		<td><%= app.telephone %></td>
+		<td><%= app.child_first_name %></td>
+		<td><%= app.child_dob %></td>
+		<td><%= app.school %></td>
+		<td><%= app.child_class %></td>
+		<td><%= app.dance_level %></td>
+		<td><%= app.location %></td>
+		<td><%= app.created_at %></td>
+	</tr>
+	<% end %>
+</table>

@@ -1,5 +1,6 @@
 class ApplicationsController < ApplicationController
   def index
+    @applications = Application.all
   end
 
   def new
@@ -9,7 +10,7 @@ class ApplicationsController < ApplicationController
   def create
   	@application = Application.new(application_params)
   	if @application.save
-  		redirect_to root_path, notice: 'Thank you for applying, you will be contacted shorlty'
+  		redirect_to confirmation_path, notice: 'Thank you for applying, you will be contacted shorlty'
   	else 
   		render :new
   	end

@@ -36,6 +36,19 @@ span {
 	font-weight: 800;
 }
 
+select { 
+	background-color: white;
+  width: 268px;
+  padding: 5px;
+  font-size: 14px;
+  color: grey;
+  line-height: 1;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  height: 34px;
+  -webkit-appearance: none;
+}
+
 //NAVBAR MEDIA BIG
 
 @media (min-width: 768px) {
@@ -100,18 +113,23 @@ span {
 	padding-bottom: 50px;
 }
 
-
-
-//MAP
-
 .second-container {
 	margin: 0 auto;
 	width: 80%;
 	h1{
 		padding-bottom: 20px
 	}
-
 }
+
+.third-container {
+	margin: 0 auto;
+	width: 98%;
+}
+
+
+//MAP
+
+
 
 #sidebar_builder{
 	margin: 0 auto;
