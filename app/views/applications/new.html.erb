@@ -22,12 +22,12 @@
 	<div class="row">
 		<div class="">
 		  <div class="field form-group">
-		    <%= f.label :parent_first_name %>
-		    <%= f.text_field :parent_first_name, :class => "form-control", :placeholder => "(prénom)" %>
+		    <%= f.label "parent name" %>
+		    <%= f.text_field :parent_first_name, :class => "form-control" %>
 		  </div>
 		  <div class="field form-group">
-		    <%= f.label :parent_last_name %>
-		    <%= f.text_field :parent_last_name, :class => "form-control", :placeholder => "(nom de famille)" %>
+		    <%= f.label "child name" %>
+		    <%= f.text_field :child_first_name, :class => "form-control" %>
 		  </div>
 		  <div class="field form-group">
 		    <%= f.label :email %>
@@ -37,30 +37,18 @@
 		    <%= f.label :telephone %>
 		    <%= f.text_field :telephone, :class => "form-control", :placeholder => "*required" %>
 		  </div>
-		  <div class="field form-group">
-		    <%= f.label :child_first_name %>
-		    <%= f.text_field :child_first_name, :class => "form-control", :placeholder => "(prénom de votre enfant)" %>
-		  </div>
+		  
 
 			<div class="field form-group">
-		    <%= f.label :location %><br>
+		    <%= f.label "preferred location for dance classes" %><br>
 		    <%= f.select :location, options_for_select([["*required", ""], "", "No preference", "South Kensington", "Bousfield", "Oratory", "Our Lady of Victories", "Parsons Green", "Chelsea Theatre", "Fulham Prep"]), :class => "form-control"%>
 		  </div>
-		  
 		  <div class="field form-group">
 		    <%= f.label "child date of birth" %>
 		    <%= f.text_field :child_dob, :class => "form-control", :placeholder => "DD/MM/YYYY" %>
 		  </div>
 		  <div class="field form-group">
-		    <%= f.label :school %>
-		    <%= f.text_field :school, :class => "form-control", :placeholder => "(where does your child go to school?)" %>
-		  </div>
-		  <div class="field form-group">
-		    <%= f.label "Class / Form" %>
-		    <%= f.text_field :child_class, :class => "form-control", :placeholder => "(what class/level/form are they currently in?)" %>
-		  </div>
-		  <div class="field form-group">
-		    <%= f.label :dance_level %>
+		    <%= f.label "dance level (if applicable)" %>
 		    <%= f.text_field :dance_level, :class => "form-control", :placeholder => "(previous experience, dance exams taken, results)" %>
 		  </div>
 		</div>
