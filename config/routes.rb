@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'confirmation' => "welcome#confirmation", as: :confirmation
   get 'ethos' => "welcome#ethos", as: :ethos
   get 'locations' => "welcome#locations", as: :locations
+  get 'timetable' => "welcome#timetable", as: :timetable
 
   #APPLICATIONS
   get 'applications' => "applications#index", as: :applications
