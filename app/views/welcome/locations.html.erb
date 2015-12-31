@@ -4,9 +4,13 @@
 
 
 <div class="second-container">
+  <h1>Locations</h1>
+
   <div class="main-map">
-  	<div id="">
+  	<div>
   		<div id="sidebar_builder"></div>
+      <br><br>
+      <h5>Click links or markers for more information</h5>
   		<div id="sidebar_container" style="display:inline-block;"></div>
   	</div>
   </div>
@@ -37,12 +41,26 @@ function createSidebar(json_array){
 };
 
 handler = Gmaps.build('Google');
-handler.buildMap({ internal: {id: 'sidebar_builder'}}, function(){
+handler.buildMap({ 
+  provider: {
+    scrollwheel: false
+  }, 
+  internal: {id: 'sidebar_builder'}}, 
+  function(){
   var json_array = [
-    { lat: 51.4901031, lng: -0.1882915, name: 'Bousfield', infowindow: "Bousfield" },
-    { lat: 51.4952747, lng: -0.1792019, name: 'South Kensington', infowindow: "South Kensington" },
-    { lat: 51.4862939, lng: -0.2119604, name: 'Fulham Prep', infowindow: "Fulham Prep" },
-    { lat: 51.4734531, lng: -0.2017752, name: 'Parsons Green', infowindow: "Wendy Bell" }
+    { lat: 51.4897156, lng: -0.1873473, name: 'Bousfield Primary School', infowindow: "<h4>Bousfield Primary School</h4><h5>South Bolton Gardens, London, SW5 0DJ</h5><p>Classes are on Tuesday</p>" },
+    { lat: 51.4938150, lng: -0.1771200, name: 'South Kensington - Fitness First', infowindow: "<h4>Fitness First</h4><h5>Petersham House, Harrington Rd, London SW7 3HD</h5><p>Classes are on Mondays and Fridays</p>" },
+    { lat: 51.4934390, lng: -0.1767410, name: 'South Kensington - Yoga Centre', infowindow: "<h4>Evolve Wellness Centre</h4><h5>10 Kendrick Mews</h5><p>Classes are on Wednesdays in Studio 1 with Miss Chloe Bergeret</p>" },
+    { lat: 51.4736680, lng: -0.2007371, name: 'Wendy Bell', infowindow: "<h4>Mission Hall</h4><h5>Parsons Green Lane (corner of St Dionis Road)</h5><p> Classes are on Mondays, Tuesdays and Thursdays</p>" },
+    { lat: 51.4721910, lng: -0.1909650, name: "L'Ecole des Petits", infowindow: "<h4>L'Ecole des Petits</h4><h5>2 Hazlebury Road London SW6 2NB</h5><p>Classes are on Tuesday, Wednesday and Thursday and are under the responsibility of Pascale Chambon</p>" },
+    { lat: 51.4843420, lng: -0.1779640, name: "Tadpoles Nursery", infowindow: "<h4>Tadpoles Nursery</h4><h5>Park Walk Playcentre Building, Park Walk, London, SW10 0AY</h5><p>Classes are on Tuesday under the responsibility of Chloe Bergeret</p>" },
+    { lat: 51.4960500, lng: -0.2189760, name: "Ecole Française Jacques Prévert", infowindow: "<h4>Ecole Française Jacques Prévert</h4><h5>59 Brook Green, London W6 7BE, United Kingdom</h5><p>Classes are on Wednesday under the responsibility of Pascale Chambon</p>" },
+    { lat: 51.4862940, lng: -0.2097720, name: "Fulham Prep School", infowindow: "<h4>Fulham Prep School</h4><h5>200 Greyhound Road London W14 9SD</h5><p> Ballet and tap classes under the responsibility of Clotilde Bortz</p>" },
+    { lat: 51.4902860, lng: -0.1699430, name: "The Oratory (Ballet Club)", infowindow: "<h4>Oratory Roman Catholic Primary School (Ballet Club)</h4><h5>Bury Walk, Cale Street, London SW3 6QH</h5><p>Ballet Club only (Wednesday)</p>" },
+    { lat: 51.4991850, lng: -0.1976360, name: "Our Lady Of Victories (Ballet Club Only)", infowindow: "<h4>Our Lady Of Victories (Ballet Club Only)</h4><h5>235a Kensington High St, London W8 6SA</h5><p>Ballet Club only (Thursday)</p>" },
+    { lat: 51.4886500, lng: -0.1903510, name: "Redcliffe School (Ballet Club Only)", infowindow: "<h4>Redcliffe School (Ballet Club Only)</h4><h5>96 Redcliffe Gardens, London, Middlesex SW10 9HH</h5><p>Ballet Club only (Thursday)</p>" },
+    { lat: 51.4886500, lng: -0.1903510, name: "Chelsea Theatre", infowindow: "<h4>Chelsea Theatre</h4><h5>7 World’s End Place, King's Road, London SW10 0DR</h5><p>Classes for all ages and levels on Saturday mornings</p>" }
+
   ];
 
 
